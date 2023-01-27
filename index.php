@@ -13,7 +13,10 @@ $this->need('header.php');
 ?>
 
 <div class="col-mb-12 col-8" id="main" role="main">
-    <?php while ($this->next()): ?>
+    <?php 
+    $this->need('components/index/swiper.php');
+    $this->need('components/index/qwq.php');
+    while ($this->next()): ?>
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
             <h2 class="post-title" itemprop="name headline">
                 <a itemprop="url"
