@@ -453,12 +453,6 @@ img.alignright {
 
 }
 
-@media (min-width: 1200px) {
-  .container {
-    max-width: 952px;
-  }
-}
-
 
 /*
 * Hide from both screenreaders and browsers: h5bp.com/u

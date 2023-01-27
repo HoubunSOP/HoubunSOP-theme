@@ -39,8 +39,8 @@
   	transition:all 0.2s ease-in-out;
   }
 </style>
-<div style="padding: 3px 10px; margin-top: 5px;">
-	<span style="font-size: 0.85em;
+<div style="padding: 3px 10px; margin: 15px 0;">
+	<span style="font-size: 1.25em;
 	color: #fff;
 	margin-top: 0em;
 	margin-left: -5px;
@@ -50,7 +50,7 @@
 	line-height: 20px;
 	margin-bottom: 0px;
 	border-bottom: 0px solid #f7e7ed;">
-		　新発売の百合漫画・小説　
+		未来发售的单行本🔭
 	</span>
 </div>
 <div class="swiper NewBookSwiper">
@@ -63,9 +63,9 @@
 				</div>
 				<div>
 					<a href="http://yurinavi.com/2023/01/18/nurumeta-3/" sl-processed="1">
-						<img loading="lazy" src="http://yurinavi.com/wp-content/uploads/2023/01/nurumeta-3.jpg"
-						alt="" width="1055" height="1500" class="alignnone size-full wp-image-60148">
-            <img src="https://houbunsha.co.jp/img/mv_img/label_4.gif">
+						<img data-src="http://yurinavi.com/wp-content/uploads/2023/01/nurumeta-3.jpg"
+						alt="" width="1055" height="1500" class="alignnone size-full wp-image-60148 swiper-lazy">
+            <img data-src="https://houbunsha.co.jp/img/mv_img/label_4.gif" class="swiper-lazy">
 					</a>
 					<p>
 					</p>
@@ -77,6 +77,7 @@
 		</div>
     <?php } ?>
 	</div>
+  <br>
   <div class="swiper-scrollbar"></div>
 </div>
 <script>
@@ -85,13 +86,17 @@
 		slidesPerView: "auto",
 		//autoplay: true,
 		//centeredSlides: true,
-		spaceBetween: 30,
+		spaceBetween: 10,
 		//loop: true,
     mousewheel: true,
     scrollbar: {
     el: '.swiper-scrollbar',
     draggable: true,
     snapOnRelease: false,
+  },
+  lazy: {
+    loadPrevNext: true,
+    loadPrevNextAmount: 8,
   },
 	});
 </script>
