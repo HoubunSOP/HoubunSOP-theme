@@ -23,7 +23,8 @@
   float: left;
   min-height: 1px;
   padding-right: 10px;
-  padding-left: 10px; }
+  padding-left: 10px;
+  }
 
 .row > [class*="-push-"],
 .row > [class*="-pull-"] {
@@ -256,7 +257,8 @@
     width: 58.33333%; }
 
   .col-8 {
-    width: 66.66667%; }
+    width: 73%;
+    }
 
   .col-9 {
     width: 75%; }
@@ -274,7 +276,8 @@
     margin-left: 0%; }
 
   .col-offset-1 {
-    margin-left: 8.33333%; }
+    margin-left: 2%;
+    }
 
   .col-offset-2 {
     margin-left: 16.66667%; }
