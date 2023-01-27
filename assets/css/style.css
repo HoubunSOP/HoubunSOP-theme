@@ -158,7 +158,7 @@ textarea {
   padding: 0;
   width: 24px;
   height: 24px;
-  background: transparent url(img/icon-search.png) no-repeat center center;
+  background: transparent url(/assets/img/icon-search.png) no-repeat center center;
   direction: ltr; /* fix RTL language */
   text-indent: -9999em;
 }
@@ -167,7 +167,7 @@ textarea {
 (-webkit-min-device-pixel-ratio: 2), 
 (min-resolution: 192dpi) {
   #search button {
-    background-image: url(img/icon-search@2x.png);
+    background-image: url(/assets/img/icon-search@2x.png);
     -webkit-background-size: 24px 24px;
     -moz-background-size: 24px 24px;
     -o-background-size: 24px 24px;
