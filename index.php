@@ -1,11 +1,11 @@
 <?php
 /**
- * Default theme for Typecho
+ * 芳文观星台官网
  *
- * @package Typecho Replica Theme
- * @author Typecho Team
- * @version 1.2
- * @link http://typecho.org
+ * @package HoubunSOP
+ * @author 芳文观星台
+ * @version 0.1
+ * @link https://space.bilibili.com/1585955812
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
