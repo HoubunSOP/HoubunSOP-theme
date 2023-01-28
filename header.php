@@ -61,7 +61,13 @@
   </header><!-- end #header -->
   <style>
   body {
-    background: url(https://s2.loli.net/2023/01/27/SU9M1XWPgdycYAF.jpg) no-repeat;
+    background: url(https://s2.loli.net/2023/01/27/SU9M1XWPgdycYAF.jpg);
+    background-size: 100% 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /*关键*/
+    background-position: center;
   }
 
   #main,
