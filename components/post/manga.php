@@ -24,13 +24,27 @@
   margin: 5px -30px -5px 0px;
 }
 
+@media (max-width: 768px) {
+  .syoseki-page1 {
+    width: 100%;
+  }
+}
+
 .entry-content img,
 .comment-content img,
 .widget img {
   max-width: 100%;
 }
 
-.futo {
+.MangaAuthor {
+  line-height: 50px;
+  color: #fff;
+  background-color: #272b446e;
+  padding: 5px 25px;
+  border-radius: 4px;
+}
+
+.MangaAuthorName {
   font-weight: bold;
 }
 
@@ -39,15 +53,8 @@
   width: 380px;
 }
 
-.genre {
-  color: #ffffff;
-  padding: 2px 20px;
-  background: var(--md-sys-color-secondary-light);
-  float: left;
-  font-weight: bold;
-  margin: 6px;
-  border-radius: 4px;
-  font-size: 14px;
+.syoseki-page2>p {
+  margin-left: 13px;
 }
 
 .clear {
@@ -60,17 +67,18 @@
 
 .syoseki-page3 {
   float: left;
-  width: 370px;
+  width: 400px;
   margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .btn-a {
-  background-color: var(--md-sys-color-primary);
   color: #fff;
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 20%);
   font-weight: bold;
   border-radius: 4px;
-  width: 170px;
   margin: 0.5em auto;
   padding: 8px 0px;
   text-align: center;
@@ -102,83 +110,117 @@
 .bookIntroduction {
   margin: 20px 0;
 }
+
+.tagList>a {
+  color: #ffffff;
+  padding: 2px 20px;
+  background: var(--md-sys-color-secondary-light);
+  float: left;
+  font-weight: bold;
+  margin: 6px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.relatedLink {
+  margin: 0 10px;
+}
 </style>
 <article>
   <header class="entry-header">
     <h1 class="entry-title">
-      恋爱小行星 (5)
+      <?php $this->title(); ?>
     </h1>
     <!-- .entry-title -->
   </header>
   <div class="entry-content clearfix">
     <div class="syoseki-page1">
-      <img src="http://yurinavi.com/wp-content/uploads/2023/01/koisuru-asuteroido-5.jpg" alt="" width="250" height="994"
-        class="alignnone size-large wp-image-60853">
+      <img
+        src="<?php if($this->fields->thumbnail == null){ echo "https://houbunsha.co.jp/img/mv_img/con_item_nPrn_2.png"; }else{ $this->fields->thumbnail(); } ?>"
+        alt="" width="250" height="994" class="alignnone size-large">
       <br>
-      <span style="line-height: 50px;
-					color: #666666;
-					border-color: #606060;
-					border-style: solid;
-					border-width: 1px 1px 1px;
-					padding: 5px 25px;
-					border-radius: 4px;">
-        <span class="futo">
+      <span class="MangaAuthor">
+        <span class="MangaAuthorName">
           Quro
         </span>
       </span>
     </div>
     <div class="syoseki-page2">
-      <a href="http://yurinavi.com/?f1=&amp;f2=&amp;f3%5B%5D=1034&amp;f6=&amp;f7=&amp;wpcfs=preset-4">
-        <p>
-        </p>
-        <div class="genre">
-          高校生
-        </div>
-      </a>
-      <a href="http://yurinavi.com/?f1=&amp;f2=&amp;f3%5B%5D=1307&amp;f6=&amp;f7=&amp;wpcfs=preset-4">
-        <div class="genre">
-          日常
-        </div>
-      </a>
+      <div class="tagList">
+        <?php $this->tags(' ', true, "<a>暂无标签</a>"); ?>
+      </div>
       <div class="clear">
         <hr>
       </div>
+      <h3 class="kanren">
+        书籍详细
+      </h3>
+      <p style="line-height: 1.2em;">
+        <span style="font-size: 0.8em;">
+          发售日:2023/1/26
+          <br>
+          出版社:芳文社
+          <br>
+          刊载杂志:
+          <br>
+          标签:まんがタイムKRコミックス
+        </span>
+      </p>
+      <div class="clear">
+        <hr>
+      </div>
+      <h3 class="kanren" style="
+      margin-top: 25px;
+      ">
+        书籍简介
+      </h3>
       <p class="bookIntroduction" style="line-height: 1.2em;">
         <span style="font-size: 0.8em;">
-          みらが部長、あおが副部長になった地学部。みらとあおは二人の望遠鏡を手に入れて観望会を開いたり、ナナとチカは地学オリンピックに挑んだりと、みんな学校の外でも熱心に活動中。一方、受験勉強中のイノ、そして大学に進学した桜とモンローは…？
+          <?php if($this->content == null){echo "<strong>暂无简介</strong>";}else{$this->content();} ?>
         </span>
       </p>
     </div>
     <div class="syoseki-page3">
-      <a href="https://amzn.to/3GMfv9g" target="_blank" rel="nofollow noopener noreferrer">
-        <div class="btn-a">
+      <!--相关链接-->
+      <?php if($this->fields->MelonBookUrl != null):?>
+      <a href="<?php $this->fields->MelonBookUrl();?>" target="_blank" rel="nofollow noopener noreferrer">
+        <div class="btn-a" style="background-color:#66cb63;">
           <center>
-            <span class="futo" style="font-size: 1.1em;color: #fff;">
-              Amazon
-              <img loading="lazy" src="http://yurinavi.com/wp-content/uploads/2020/04/new-window-icon-white.png"
-                class="gaibu" alt="" width="30" height="auto">
+            <span class="relatedLink" style="font-size: 1.1em;color: #fff;">
+              MelonBooks
+              <i class="fa-solid fa-arrow-up-right-from-square" style=" font-size: 10px; "></i>
             </span>
           </center>
         </div>
       </a>
+      <?php endif;
+      if($this->fields->AnimateUrl != null):?>
+      <a href="<?php $this->fields->AnimateUrl();?>" target="_blank" rel="nofollow noopener noreferrer">
+        <div class="btn-a" style="background-color:#285490;">
+          <center>
+            <span class="relatedLink" style="font-size: 1.1em;color: #fff;">
+              Animate
+              <i class="fa-solid fa-arrow-up-right-from-square" style=" font-size: 10px; "></i>
+            </span>
+          </center>
+        </div>
+      </a>
+      <?php endif;
+      if($this->fields->GamersUrl != null):?>
+      <a href="<?php $this->fields->GamersUrl();?>" target="_blank" rel="nofollow noopener noreferrer">
+        <div class="btn-a" style="background-color:#ed7203;">
+          <center>
+            <span class="relatedLink" style="font-size: 1.1em;color: #fff;">
+              Gamers
+              <i class="fa-solid fa-arrow-up-right-from-square" style=" font-size: 10px; "></i>
+            </span>
+          </center>
+        </div>
+      </a>
+      <?php endif;?>
+      <!--相关链接 end-->
     </div>
-    <div class="clear">
-      <hr>
-    </div>
-    <h3 class="kanren">
-      书籍详细
-    </h3>
-    <p style="line-height: 1.2em;">
-      <span style="font-size: 0.8em;">
-        发售日：2023/1/26
-        <br>
-        出版社：芳文社
-        <br>
-        刊载杂志：
-        <br>
-        标签：まんがタイムKRコミックス
-      </span>
-    </p>
+
     <p>
       &nbsp;
     </p>

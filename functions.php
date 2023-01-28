@@ -38,7 +38,17 @@ function themeFields($layout)
   $thumbnail = new Typecho_Widget_Helper_Form_Element_Text('thumbnail', NULL, NULL, _t('文章/漫画封面'), _t('漫画建议尺寸1761∶2500，文章建议尺寸3∶2'));
   $layout->addItem($thumbnail);
 
-  $UpDate = new Typecho_Widget_Helper_Form_Element_Text('UpDate', NULL, NULL, _t('漫画发布日期'), _t('请直接填写 月/日，文章无需填写'));
+  $UpDate = new Typecho_Widget_Helper_Form_Element_Text('UpDate', NULL, NULL, _t('漫画发布日期'), _t('请直接填写年/月/日(YYYY/MM/DD)，文章无需填写'));
   $layout->addItem($UpDate);
+
+  //漫画相关链接
+  $MelonBookUrl = new Typecho_Widget_Helper_Form_Element_Text('MelonBookUrl', NULL, NULL, _t('MelonBook链接'), _t('文章无需填写'));
+  $layout->addItem($MelonBookUrl);
+
+  $GamersUrl = new Typecho_Widget_Helper_Form_Element_Text('GamersUrl', NULL, NULL, _t('Gamers链接'), _t('文章无需填写'));
+  $layout->addItem($GamersUrl);
+
+  $AnimateUrl = new Typecho_Widget_Helper_Form_Element_Text('AnimateUrl', NULL, NULL, _t('Animate链接'), _t('文章无需填写'));
+  $layout->addItem($AnimateUrl);
   
 }

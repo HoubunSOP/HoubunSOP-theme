@@ -16,4 +16,5 @@
     <?php $this->content(); ?>
   </div>
   <p itemprop="keywords" class="tags"><?php _e('标签: '); ?><?php $this->tags(', ', true, 'none'); ?></p>
+  <?php $this->tags(); ?>
 </article>

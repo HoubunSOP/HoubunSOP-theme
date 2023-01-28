@@ -31,7 +31,7 @@
         <div class="SwiperCardTag">
           <?php
           if($recent->fields->UpDate != null){
-            $recent->fields->UpDate();
+            echo substr_replace($recent->fields->UpDate,"",0,5);
           }else{
             echo "null";
           }

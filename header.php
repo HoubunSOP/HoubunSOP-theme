@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/grid.css'); ?>">
   <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/style.css'); ?>">
   <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/color/theme.css'); ?>">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/6.2.1/css/all.min.css">
 
   <!-- 通过自有函数输出HTML头部信息 -->
   <?php $this->header(); ?>

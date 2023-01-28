@@ -2,7 +2,6 @@
 
 执行 `git commit` 时使用 emoji 为本次提交打上一个 "标签", 使得此次 commit 的主要工作得以凸现，也能够使得其在整个提交历史中易于区分与查找。
 
-
 ### commit 格式
 
 `git commit` 时，提交信息遵循以下格式：
@@ -42,7 +41,7 @@ git commit -m ":tada: Initialize Repo"
 | ⚡ (闪电)``🐎 (赛马)                         | `:zap:``:racehorse:`          | 提升性能              |
 | 📈 (上升趋势图)                              | `:chart_with_upwards_trend:`  | 添加分析或跟踪代码    |
 | 🚀 (火箭)                                    | `:rocket:`                    | 部署功能              |
-| ✅ (白色复选框)                              | `:white_check_mark:`          | 增加测试              |
+| ✅ (白色复选框)                              | `:white_check_mark:`          | 完成功能/页面         |
 | 📝 (备忘录)``📖 (书)                         | `:memo:``:book:`              | 撰写文档              |
 | 🔨 (锤子)                                    | `:hammer:`                    | 重大重构              |
 | 🎨 (调色板)                                  | `:art:`                       | 改进代码结构/代码格式 |
