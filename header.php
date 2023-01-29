@@ -95,72 +95,7 @@
     top: 100px;
     position: relative;
   }
-
-  #scrollpath {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 10px;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.05);
-  }
-
-
-  #progressbar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 10px;
-    height: 100%;
-    background: linear-gradient(to top, #008aff, #00ffe7);
-    animation: animate 5s linear infinite;
-    border-radius: 50px;
-  }
-
-  @keyframes animate {
-
-    0%,
-    100% {
-      filter: hue-rotate(0deg);
-    }
-
-    50% {
-      filter: hue-rotate(360deg);
-    }
-  }
-
-  #progressbar:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(to top, #008aff, #00ffe7);
-    filter: blur(10px);
-  }
-
-  #progressbar:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, #008aff, #00ffe7);
-    filter: blur(30px);
-  }
   </style>
-  <script>
-  let progress = document.getElementById("progressbar");
-  let totalHeight = document.body.scrollHeight - window.innerHeight;
-  window.onscroll = function() {
-    let progressHeight = (window.pageYOffset / totalHeight) * 100;
-
-    progress.style.height = progressHeight + "%";
-  }
-  </script>
-  <div id="progressbar"></div>
-  <div id="scrollpath"></div>
   <div id="body">
     <div class="container drop-shadow">
       <div class="row">
