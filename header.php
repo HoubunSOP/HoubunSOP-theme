@@ -25,7 +25,10 @@
 </head>
 
 <body>
-  <?php if(1 != 1):?>
+  <?php 
+  //永false判断
+  if(1 != 1):
+  ?>
   <header id="header" class="clearfix">
     <div class="container">
       <div class="row">
@@ -111,7 +114,75 @@
     background-color: #FF6D00;
     color: white;
   }
+  /* -----------------------------------------
+   流れ星
+   -----------------------------------------*/
+
+@keyframes nagareboshi01 {
+    0% {left:-10px; top:40% ;opacity:1;}
+    15% {left:100%; top: 80%; opacity:0;}
+}
+
+.move_star01 {
+    animation: nagareboshi01 infinite;
+    animation-duration: 15s;
+		animation-delay: 10s;
+		position: absolute;
+		width: 1%;
+		opacity: 0;
+		z-index: 51;
+}
+
+
+@keyframes nagareboshi02 {
+    0% {left:-10%; top:10%;opacity:1;}
+    30% {left:100%; top: 25%; opacity:0;}
+}
+.move_star02 {
+    animation: nagareboshi02 infinite;
+    animation-duration: 20s;
+		animation-delay: 2s;
+		position: absolute;
+		width: 1%;
+		opacity: 0;
+		z-index: 52;
+}
+
+
+
+
+
+@keyframes nagareboshi03 {
+    0% {left:-10%; top:0%;opacity:1;}
+    30% {left:100%; top: 10%; opacity:0;}
+}
+.move_star03 {
+    animation: nagareboshi02 infinite;
+    animation-duration: 30s;
+		animation-delay: 2s;
+		position: absolute;
+		width: 1.8%;
+		opacity: 0;
+		z-index: 52;
+}
+
+
+.ms_m{
+	left: -10%;
+}
   </style>
   <div id="body">
+    <div class="move_star01 img_100">
+    	<img src="http://koiastv.com/images/tmp/star.png" width="133" height="133"
+    	alt="">
+    </div>
+    <div class="move_star02 img_100">
+    	<img src="http://koiastv.com/images/tmp/star.png" width="133" height="133"
+    	alt="">
+    </div>
+    <div class="move_star03 img_100 style_mobile">
+    	<img src="http://koiastv.com/images/tmp/star.png" width="133" height="133"
+    	alt="">
+    </div>
     <div class="container drop-shadow">
       <div class="row">

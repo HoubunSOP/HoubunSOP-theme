@@ -119,16 +119,30 @@ body {
 
 #Navigation li {
   margin-left: 20px;
+  transition: all 0.3s;
 }
-
-#Navigation li a {
-  width: 80px;
-  height: 20px;
-  background: #fff;
+#Navigation li:hover {
+  background:white;
   display: block;
   border-radius: 90px;
+  transition: all 0.3s;
+  color:var(--md-ref-palette-primary40);
+}
+#Navigation li a {
+  display: block;
+  width: 80px;
+  height: 20px;
+  text-align: center;
+  color:white;
+  font-weight: 700;
+  margin: 5px;
+  transition: all 0.3s;
 }
 
+#Navigation li a:hover {
+  
+  color:var(--md-ref-palette-primary40);
+}
 #Navigation #menu-toggle {
   width: 55px;
   height: 55px;
@@ -269,10 +283,16 @@ body {
         </div>
       </div>
       <ul>
-        <li><a href="#section00"></a></li>
-        <li><a href="#section01"></a></li>
-        <li><a href="#section02"></a></li>
-        <li><a href="#section03"></a></li>
+        <li><a href="<?php $this->options->siteUrl(); ?>">首页</a></li>
+        <?php 
+          \Widget\Contents\Page\Rows::alloc()->to($pages);
+          while ($pages->next()): 
+        ?>
+        <li>
+        <a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
+          <?php endwhile; ?>
+        </li>
+
       </ul>
     </div>
   </nav>
