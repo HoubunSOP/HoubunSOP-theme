@@ -95,6 +95,22 @@
     top: 100px;
     position: relative;
   }
+
+  /* 修改选择时的颜色 */
+  ::selection {
+    background-color: #FF6D00;
+    color: white;
+  }
+
+  ::-moz-selection {
+    background-color: #FF6D00;
+    color: white;
+  }
+
+  ::-webkit-selection {
+    background-color: #FF6D00;
+    color: white;
+  }
   </style>
   <div id="body">
     <div class="container drop-shadow">

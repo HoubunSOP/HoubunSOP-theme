@@ -484,6 +484,7 @@ textarea {
 .comment-content {
   line-height: 1.5;
   word-wrap: break-word;
+  position: relative;
 }
 .post-content h2,
 .comment-content h2 {

@@ -23,7 +23,7 @@ body {
 }
 
 #Navigation nav {
-  background-color: rgb(8 29 146 / 80%);
+  background-color: #3752abb3;
   backdrop-filter: saturate(120%) blur(20px);
   transition: 0.3s ease all;
   border-radius: 24px;
@@ -44,7 +44,7 @@ body {
 }
 
 #Navigation nav.navShadow {
-  box-shadow: 0 4px 30px -5px rgb(8 29 146 / 80%);
+  box-shadow: 0 4px 30px -5px #3752abb3;
   height: 60px;
 }
 
@@ -200,7 +200,7 @@ body {
   #Navigation ul {
     display: inline-block;
     height: 0;
-    background: #79edfc;
+    background-color: #3752abb3;
     position: absolute;
     top: 80px;
     transform: translate();
@@ -210,6 +210,10 @@ body {
 
   #Navigation ul.showMenu {
     height: 250px;
+    background-color: #314997b3;
+    backdrop-filter: saturate(120%) blur(20px);
+    transition: 0.3s ease all;
+    border-radius: 0px 0px 24px 24px;
   }
 
   #Navigation ul.showMenu li {
@@ -278,7 +282,6 @@ body {
   integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 <script>
 $(() => {
-  //On Scroll Functionality
   $(window).scroll(() => {
     var windowTop = $(window).scrollTop()
     windowTop > 100 ?
@@ -289,7 +292,6 @@ $(() => {
       $('ul').css('top', '80px')
   })
 
-  //Click Logo To Scroll To Top
   $('#logo').on('click', () => {
     $('html,body').animate({
         scrollTop: 0,
@@ -297,8 +299,6 @@ $(() => {
       500
     )
   })
-
-  //Smooth Scrolling Using Navigation Menu
   $('a[href*="#"]').on('click', function(e) {
     $('html,body').animate({
         scrollTop: $($(this).attr('href')).offset().top - 100,
@@ -307,8 +307,6 @@ $(() => {
     )
     e.preventDefault()
   })
-
-  //Toggle Menu
   $('#menu-toggle').on('click', () => {
     $('#menu-toggle').toggleClass('closeMenu')
     $('ul').toggleClass('showMenu')

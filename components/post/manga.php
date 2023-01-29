@@ -24,11 +24,7 @@
   margin: 5px -30px -5px 0px;
 }
 
-@media (max-width: 768px) {
-  .syoseki-page1 {
-    width: 100%;
-  }
-}
+
 
 .entry-content img,
 .comment-content img,
@@ -68,7 +64,7 @@
 .syoseki-page3 {
   float: left;
   width: 400px;
-  margin: 5px;
+  margin: 30px 5px 5px 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -125,6 +121,20 @@
 .relatedLink {
   margin: 0 10px;
 }
+
+@media (max-width: 768px) {
+  .syoseki-page1 {
+    width: 100%;
+  }
+
+  .syoseki-page3 {
+    width: 100%;
+  }
+
+  .post-content>p>img {
+    max-width: 90%;
+  }
+}
 </style>
 <article>
   <header class="entry-header">
@@ -133,7 +143,7 @@
     </h1>
     <!-- .entry-title -->
   </header>
-  <div class="entry-content clearfix">
+  <div id="entry-content" class="entry-content clearfix">
     <div class="syoseki-page1">
       <img
         src="<?php if($this->fields->thumbnail == null){ echo "https://houbunsha.co.jp/img/mv_img/con_item_nPrn_2.png"; }else{ $this->fields->thumbnail(); } ?>"
@@ -153,10 +163,11 @@
         <hr>
       </div>
       <h3 class="kanren">
+        <i class="fa-solid fa-star" style="color: rgb(253,208,0);"></i>
         书籍详细
       </h3>
-      <p style="line-height: 1.2em;">
-        <span style="font-size: 0.8em;">
+      <p style="line-height: 1.5em;">
+        <span style="font-size: 1em;">
           发售日:2023/1/26
           <br>
           出版社:芳文社
@@ -172,6 +183,7 @@
       <h3 class="kanren" style="
       margin-top: 25px;
       ">
+        <i class="fa-solid fa-moon" style="color: rgb(253,208,0);"></i>
         书籍简介
       </h3>
       <p class="bookIntroduction" style="line-height: 1.2em;">
@@ -190,7 +202,6 @@
           <center>
             <span class="relatedLink" style="font-size: 1.1em;color: #fff;">
               MelonBooks
-              <i class="fa-solid fa-arrow-up-right-from-square" style=" font-size: 10px; "></i>
             </span>
           </center>
         </div>
@@ -202,7 +213,6 @@
           <center>
             <span class="relatedLink" style="font-size: 1.1em;color: #fff;">
               Animate
-              <i class="fa-solid fa-arrow-up-right-from-square" style=" font-size: 10px; "></i>
             </span>
           </center>
         </div>
@@ -214,7 +224,6 @@
           <center>
             <span class="relatedLink" style="font-size: 1.1em;color: #fff;">
               Gamers
-              <i class="fa-solid fa-arrow-up-right-from-square" style=" font-size: 10px; "></i>
             </span>
           </center>
         </div>
@@ -247,3 +256,145 @@
     </p>
     <!-- #comments .comments-area -->
 </article>
+<style>
+.post-content {
+  color: #24292e;
+  line-height: 2em;
+}
+
+.post-content h2 {
+  font-size: 180%;
+  transform: rotate(0.03deg);
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.4;
+}
+
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5 {
+  color: #004483;
+  font-weight: 700;
+  margin-top: 25px;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+  line-height: 1.4;
+  font-weight: 700;
+  margin: 30px 0 10px 0;
+}
+
+.post-content p {
+  margin: 10px 0;
+}
+
+.post-content ul {
+  margin-left: 20px;
+}
+
+.gallery>img {
+  margin: 10px 0 20px 0;
+  transition: 0.3s ease all;
+  border-radius: 10px;
+}
+
+.gallery>img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 30px -5px #3752abb3;
+  cursor: pointer;
+}
+
+.post-content a:not(.gallery) {
+  text-decoration: none;
+  color: rgba(0, 68, 131, 1.00);
+  font-weight: 600;
+  border-bottom: rgba(45, 67, 144, 1.00) 2px dotted;
+}
+
+.post-content a:not(.gallery):after {
+  content: ' \f08e';
+  font-family: "Font Awesome 6 Free";
+}
+
+.post-content li::marker {
+  content: '☄️';
+  color: red;
+  font-size: 3px;
+}
+
+.post-content h2:before {
+  content: "⭐";
+}
+
+.post-content h2:after {
+  content: "⭐";
+}
+
+.post-content h3 {
+  font-size: 165%;
+  transform: rotate(0.03deg);
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.4;
+}
+
+.post-content h3:before {
+  content: "✨";
+}
+
+.post-content h4 {
+  font-size: 140%;
+  transform: rotate(0.03deg);
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.4;
+  border-bottom: 2px solid var(--md-sys-color-on-primary-container);
+}
+
+.post-content h4:before {
+  content: "🔭";
+}
+
+h5 {
+  transform: rotate(0.03deg);
+  font-weight: 700;
+  font-size: 120%;
+  border-bottom: rgb(0, 68, 131) 3px dotted;
+  margin-bottom: 7px;
+  line-height: 1.4;
+  color: #004483;
+}
+
+.post-content h5:before {
+  content: "🌙";
+}
+
+/* 预计制作 */
+.ns_h4 {
+  position: relative;
+  background: #E9F0FB;
+  padding: 10px 10px 10px 13px;
+  font-size: 115%;
+  color: #004483;
+  border-left: rgba(71, 116, 185, 1.00) 10px solid;
+  box-sizing: border-box;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  transform: rotate(0.03deg);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* 预计制作 */
+.ns_waku {
+  background-color: rgba(223, 229, 252, 1.00);
+  border-radius: 20px;
+  padding: 10px 15px;
+}
+</style>

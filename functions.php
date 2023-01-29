@@ -12,7 +12,7 @@ function themeConfig($form)
     );
 
     $form->addInput($logoUrl);
-
+    //todo 重做此处
     $sidebarBlock = new \Typecho\Widget\Helper\Form\Element\Checkbox(
         'sidebarBlock',
         [

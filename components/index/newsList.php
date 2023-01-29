@@ -7,7 +7,7 @@
   font-size: 12px;
   overflow: hidden;
   clear: both;
-  margin: 0px 0px 5px;
+  margin: 20px 0px 5px 0px;
   vertical-align: top;
   border-bottom: dashed 1px #969696;
 }
@@ -112,9 +112,19 @@
     object-fit: cover;
   }
 }
+
+.post-list {
+  transition: all .3s;
+}
+
+.post-list:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 10px rgb(204 204 204 / 47%);
+  transition: all .2s ease;
+}
 </style>
 <ul id="npcatch-top">
-  <li>
+  <li class="post-list">
     <a href="<?php $this->permalink(); ?>">
       <img
         src="<?php if($this->fields->thumbnail == null){ echo "https://houbunsha.co.jp/img/mv_img/con_item_nPrn_2.png"; }else{ $this->fields->thumbnail(); } ?>"
