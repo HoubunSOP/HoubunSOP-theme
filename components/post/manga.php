@@ -176,7 +176,9 @@
       </h3>
       <p class="bookIntroduction" style="line-height: 1.2em;">
         <span style="font-size: 0.8em;">
-          <?php if($this->content == null){echo "<strong>暂无简介</strong>";}else{$this->content();} ?>
+          <div id="post_content" class="post-content">
+            <?php if($this->content == null){echo "<strong>暂无简介</strong>";}else{$this->content();} ?>
+          </div>
         </span>
       </p>
     </div>
