@@ -136,6 +136,30 @@
   }
 }
 </style>
+<?php
+$Magazine = "Manga Time ";
+switch ($this->fields->Magazine)
+{
+  case "1":
+    $Magazine .= "Kirara";
+    break;
+  case "2":
+    $Magazine .= "MAX";
+    break;
+  case "3":
+    $Magazine .= "Carat";
+    break;
+  case "4":
+    $Magazine .= "Forward";
+    break;
+  case "5":
+    $Magazine = "Comic Fuz";
+    break;
+  default:
+    $Magazine = "其他系列";
+}
+
+?>
 <article>
   <header class="entry-header">
     <h1 class="entry-title">
@@ -168,13 +192,11 @@
       </h3>
       <p style="line-height: 1.5em;">
         <span style="font-size: 1em;">
-          发售日:2023/1/26
+          发售日:<?php $this->fields->UpDate();?>
           <br>
           出版社:芳文社
           <br>
-          刊载杂志:
-          <br>
-          标签:まんがタイムKRコミックス
+          刊载杂志:<?php echo $Magazine; ?>
         </span>
       </p>
       <div class="clear">

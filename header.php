@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/style.css'); ?>">
   <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/color/theme.css'); ?>">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/6.2.1/css/all.min.css">
+  <script src="https://cdn.bootcss.com/jquery/3.5.1/jquery.min.js"></script>
 
   <!-- 通过自有函数输出HTML头部信息 -->
   <?php $this->header(); ?>
@@ -114,75 +115,102 @@
     background-color: #FF6D00;
     color: white;
   }
+
   /* -----------------------------------------
    流れ星
    -----------------------------------------*/
 
-@keyframes nagareboshi01 {
-    0% {left:-10px; top:40% ;opacity:1;}
-    15% {left:100%; top: 80%; opacity:0;}
-}
+  @keyframes nagareboshi01 {
+    0% {
+      left: -10px;
+      top: 40%;
+      opacity: 1;
+    }
 
-.move_star01 {
+    15% {
+      left: 100%;
+      top: 80%;
+      opacity: 0;
+    }
+  }
+
+  .move_star01 {
     animation: nagareboshi01 infinite;
     animation-duration: 15s;
-		animation-delay: 10s;
-		position: absolute;
-		width: 1%;
-		opacity: 0;
-		z-index: 51;
-}
+    animation-delay: 10s;
+    position: absolute;
+    width: 1%;
+    opacity: 0;
+    z-index: 51;
+  }
 
 
-@keyframes nagareboshi02 {
-    0% {left:-10%; top:10%;opacity:1;}
-    30% {left:100%; top: 25%; opacity:0;}
-}
-.move_star02 {
+  @keyframes nagareboshi02 {
+    0% {
+      left: -10%;
+      top: 10%;
+      opacity: 1;
+    }
+
+    30% {
+      left: 100%;
+      top: 25%;
+      opacity: 0;
+    }
+  }
+
+  .move_star02 {
     animation: nagareboshi02 infinite;
     animation-duration: 20s;
-		animation-delay: 2s;
-		position: absolute;
-		width: 1%;
-		opacity: 0;
-		z-index: 52;
-}
+    animation-delay: 2s;
+    position: absolute;
+    width: 1%;
+    opacity: 0;
+    z-index: 52;
+  }
 
 
 
 
 
-@keyframes nagareboshi03 {
-    0% {left:-10%; top:0%;opacity:1;}
-    30% {left:100%; top: 10%; opacity:0;}
-}
-.move_star03 {
+  @keyframes nagareboshi03 {
+    0% {
+      left: -10%;
+      top: 0%;
+      opacity: 1;
+    }
+
+    30% {
+      left: 100%;
+      top: 10%;
+      opacity: 0;
+    }
+  }
+
+  .move_star03 {
     animation: nagareboshi02 infinite;
     animation-duration: 30s;
-		animation-delay: 2s;
-		position: absolute;
-		width: 1.8%;
-		opacity: 0;
-		z-index: 52;
-}
+    animation-delay: 2s;
+    position: absolute;
+    width: 1.8%;
+    opacity: 0;
+    z-index: 52;
+  }
 
 
-.ms_m{
-	left: -10%;
-}
+  .ms_m {
+    left: -10%;
+  }
   </style>
   <div id="body">
     <div class="move_star01 img_100">
-    	<img src="http://koiastv.com/images/tmp/star.png" width="133" height="133"
-    	alt="">
+      <img src="http://koiastv.com/images/tmp/star.png" width="133" height="133" alt="">
     </div>
     <div class="move_star02 img_100">
-    	<img src="http://koiastv.com/images/tmp/star.png" width="133" height="133"
-    	alt="">
+      <img src="http://koiastv.com/images/tmp/star.png" width="133" height="133" alt="">
     </div>
     <div class="move_star03 img_100 style_mobile">
-    	<img src="http://koiastv.com/images/tmp/star.png" width="133" height="133"
-    	alt="">
+      <img src="http://koiastv.com/images/tmp/star.png" width="133" height="133" alt="">
     </div>
     <div class="container drop-shadow">
       <div class="row">

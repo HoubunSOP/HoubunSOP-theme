@@ -12,6 +12,16 @@ function themeConfig($form)
     );
 
     $form->addInput($logoUrl);
+
+    $commentImgUrl = new \Typecho\Widget\Helper\Form\Element\Text(
+      'commentImgUrl',
+      null,
+      null,
+      _t('评论框背景 地址'),
+      _t('在这里填入一个图片 URL 地址')
+  );
+
+    $form->addInput($commentImgUrl);
     //todo 重做此处
     $sidebarBlock = new \Typecho\Widget\Helper\Form\Element\Checkbox(
         'sidebarBlock',
@@ -27,6 +37,8 @@ function themeConfig($form)
     );
 
     $form->addInput($sidebarBlock->multiMode());
+
+
 }
 
 
@@ -41,6 +53,8 @@ function themeFields($layout)
   $UpDate = new Typecho_Widget_Helper_Form_Element_Text('UpDate', NULL, NULL, _t('漫画发布日期'), _t('请直接填写年/月/日(YYYY/MM/DD)，文章无需填写'));
   $layout->addItem($UpDate);
 
+  $Magazine= new Typecho_Widget_Helper_Form_Element_Radio('Magazine',array('1' => _t('Kirara'),'2' => _t('MAX'),'3' => _t('Carat'),'4' => _t('Forward'),'5' => _t('Comic Fuz')),null,_t('漫画登刊'),_t("漫画在哪个杂志中连载，不填写为其他"));
+  $layout->addItem($Magazine);
   //漫画相关链接
   $MelonBookUrl = new Typecho_Widget_Helper_Form_Element_Text('MelonBookUrl', NULL, NULL, _t('MelonBook链接'), _t('文章无需填写'));
   $layout->addItem($MelonBookUrl);
@@ -51,4 +65,29 @@ function themeFields($layout)
   $AnimateUrl = new Typecho_Widget_Helper_Form_Element_Text('AnimateUrl', NULL, NULL, _t('Animate链接'), _t('文章无需填写'));
   $layout->addItem($AnimateUrl);
   
+}
+
+class Tool{
+  public static function avatr($mail, int $size = 100, bool $out = false)
+  {
+      $Op_avatr = Typecho_Widget::widget('Widget_Options')->gravatars;
+      $Str = str_replace('@qq.com','',$mail);
+      $avatr = '';
+      if(stristr($mail,'@qq.com')&&is_numeric($Str)&&strlen($Str)<11&&strlen($Str)>4){
+          $url = 'https://s.p.qq.com/pub/get_face?img_type=3&uin='.$Str;
+          $api = get_headers($url,true)['Location'];
+          $json_api = json_encode($api);
+          $ex_api = explode("&k=",$json_api)[1];
+          $k_value = explode("&s=",$ex_api)[0];
+          $avatr = 'https://q.qlogo.cn/g?b=qq&k='.$k_value.'&s='.$size;
+      }else{
+          $mail = md5($mail);
+          $avatr = 'https://'.$Op_avatr.'/'.$mail.'?s='.$size;
+      }
+      if ($out === true) {
+          return $avatr;
+      }else{
+          echo $avatr;
+      }
+  }
 }

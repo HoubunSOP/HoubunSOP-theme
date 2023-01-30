@@ -121,28 +121,31 @@ body {
   margin-left: 20px;
   transition: all 0.3s;
 }
+
 #Navigation li:hover {
-  background:white;
+  background: white;
   display: block;
   border-radius: 90px;
   transition: all 0.3s;
-  color:var(--md-ref-palette-primary40);
+  color: var(--md-ref-palette-primary40);
 }
+
 #Navigation li a {
   display: block;
   width: 80px;
   height: 20px;
   text-align: center;
-  color:white;
+  color: white;
   font-weight: 700;
   margin: 5px;
   transition: all 0.3s;
 }
 
 #Navigation li a:hover {
-  
-  color:var(--md-ref-palette-primary40);
+
+  color: var(--md-ref-palette-primary40);
 }
+
 #Navigation #menu-toggle {
   width: 55px;
   height: 55px;
@@ -289,7 +292,7 @@ body {
           while ($pages->next()): 
         ?>
         <li>
-        <a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
+          <a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
           <?php endwhile; ?>
         </li>
 
@@ -298,8 +301,7 @@ body {
   </nav>
 </header>
 <!-- partial -->
-<script src="https://code.jquery.com/jquery-3.6.3.min.js"
-  integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
 <script>
 $(() => {
   $(window).scroll(() => {

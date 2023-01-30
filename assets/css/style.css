@@ -383,15 +383,7 @@ textarea {
   margin-top: 10px;
   border: 1px solid #eee;
 }
-.comment-list li.comment-level-odd {
-  background: #f6f6f3;
-}
-.comment-list li.comment-level-even {
-  background: #fff;
-}
-.comment-list li.comment-by-author {
-  background: #fff9e8;
-}
+
 .comment-list li .comment-reply {
   text-align: right;
   font-size: 0.92857em;
@@ -426,7 +418,7 @@ textarea {
 }
 #comment-form label {
   display: block;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
   font-weight: bold;
 }
 #comment-form .required:after {
