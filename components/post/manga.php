@@ -144,13 +144,13 @@ switch ($this->fields->Magazine)
     $Magazine .= "Kirara";
     break;
   case "2":
-    $Magazine .= "MAX";
+    $Magazine .= "KR MAX";
     break;
   case "3":
-    $Magazine .= "Carat";
+    $Magazine .= "KR Carat";
     break;
   case "4":
-    $Magazine .= "Forward";
+    $Magazine .= "KR Forward";
     break;
   case "5":
     $Magazine = "Comic Fuz";

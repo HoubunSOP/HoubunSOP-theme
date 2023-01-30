@@ -59,3 +59,4 @@ git commit -m ":tada: Initialize Repo"
 | 🏁 (旗帜)                                    | `:checkered_flag:`            | 修复 Windows 下的问题 |
 | 🔀 (交叉箭头)                                | `:twisted_rightwards_arrows:` | 分支合并              |
 | [🧪](https://emojipedia.org/test-tube/) (试管) | `:test_tube:`                 | 测试某一功能          |
+| 🔨 (锤子)                                    |                                 | 修复某个Bug           |
