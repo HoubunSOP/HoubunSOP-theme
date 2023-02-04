@@ -242,7 +242,7 @@
     width: 16.66667%; }
 
   .col-3 {
-    width: 25%; }
+    width: 29%; }
 
   .col-4 {
     width: 33.33333%; }
@@ -257,7 +257,7 @@
     width: 58.33333%; }
 
   .col-8 {
-    width: 73%;
+    width: 68%;
     }
 
   .col-9 {
@@ -394,7 +394,7 @@
  */
 @media (min-width: 1200px) {
   .container {
-    max-width: 1160px; }
+    max-width: 1400px; }
 
   .col-wd-1 {
     width: 8.33333%; }

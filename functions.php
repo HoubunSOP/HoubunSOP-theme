@@ -6,12 +6,29 @@ function themeConfig($form)
     $logoUrl = new \Typecho\Widget\Helper\Form\Element\Text(
         'logoUrl',
         null,
-        null,
+        'https://fastly.jsdelivr.net/gh/HoubunSOP/HoubunSOP-remotion@main/public/Images/logo/logo-light.svg',
         _t('站点 LOGO 地址'),
         _t('在这里填入一个图片 URL 地址, 以在网站标题前加上一个 LOGO')
     );
+    $icoUrl = new \Typecho\Widget\Helper\Form\Element\Text(
+      'icoUrl',
+      null,
+      null,
+      _t('站点 图标 地址'),
+      _t('在这里填入一个ico URL 地址, 以在浏览器标题前加上一个 图标')
+  );
 
-    $form->addInput($logoUrl);
+    $form->addInput($icoUrl);
+
+    $backgroundUrl = new \Typecho\Widget\Helper\Form\Element\Text(
+      'backgroundUrl',
+      null,
+      'https://s2.loli.net/2023/01/27/SU9M1XWPgdycYAF.jpg',
+      _t('背景图片地址'),
+      _t('在这里填入一个图片 URL 地址, 以在网站中设置背景')
+  );
+
+  $form->addInput($backgroundUrl);
 
     $commentImgUrl = new \Typecho\Widget\Helper\Form\Element\Text(
       'commentImgUrl',
@@ -22,17 +39,28 @@ function themeConfig($form)
   );
 
     $form->addInput($commentImgUrl);
+
+    $swiperCid = new \Typecho\Widget\Helper\Form\Element\Text(
+      'swiperCid',
+      null,
+      null,
+      _t('轮播图的文章/漫画cid'),
+      _t('在这里填入一个文章/漫画cid(以半角逗号隔开), 以将指定文章/漫画添加到首页轮播图中')
+  );
+
+    $form->addInput($swiperCid);
     //todo 重做此处
     $sidebarBlock = new \Typecho\Widget\Helper\Form\Element\Checkbox(
         'sidebarBlock',
         [
             'ShowRecentPosts'    => _t('显示最新文章'),
+            'ShowRecentMangas'    => _t('显示最新漫画'),
             'ShowRecentComments' => _t('显示最近回复'),
             'ShowCategory'       => _t('显示分类'),
             'ShowArchive'        => _t('显示归档'),
             'ShowOther'          => _t('显示其它杂项')
         ],
-        ['ShowRecentPosts', 'ShowRecentComments', 'ShowCategory', 'ShowArchive', 'ShowOther'],
+        ['ShowRecentPosts','ShowRecentMangas', 'ShowRecentComments', 'ShowCategory', 'ShowArchive', 'ShowOther'],
         _t('侧边栏显示')
     );
 
@@ -52,6 +80,9 @@ function themeFields($layout)
 
   $UpDate = new Typecho_Widget_Helper_Form_Element_Text('UpDate', NULL, NULL, _t('漫画发布日期'), _t('请直接填写年/月/日(YYYY/MM/DD)，文章无需填写'));
   $layout->addItem($UpDate);
+  
+  $author = new Typecho_Widget_Helper_Form_Element_Text('author', NULL, NULL, _t('作者名称'), _t('漫画作者名字'));
+  $layout->addItem($author);
 
   $Magazine= new Typecho_Widget_Helper_Form_Element_Radio('Magazine',array('1' => _t('Kirara'),'2' => _t('MAX'),'3' => _t('Carat'),'4' => _t('Forward'),'5' => _t('Comic Fuz')),null,_t('漫画登刊'),_t("漫画在哪个杂志中连载，不填写为其他"));
   $layout->addItem($Magazine);
@@ -90,4 +121,22 @@ class Tool{
           echo $avatr;
       }
   }
+}
+class Widget_Post_GetCid extends Widget_Abstract_Contents {
+	public function __construct($request, $response, $params = NULL) {
+		parent::__construct($request, $response, $params);
+		$this->parameter->setDefault(array('pageSize' => $this->options->commentsListSize, 'parentId' => 0, 'ignoreAuthor' => false));
+	}
+	public function execute() {
+		$select  = $this->select()->from('table.contents')
+		->where("table.contents.password IS NULL OR table.contents.password = ''")
+		->where('table.contents.type = ?', 'post')
+		->limit($this->parameter->pageSize)
+		->order('table.contents.modified', Typecho_Db::SORT_DESC);
+		if ($this->parameter->GetCid) {
+			$cid=explode(",",$this->parameter->GetCid);
+			$select->where('table.contents.cid in ?', $cid);
+		}
+		$this->db->fetchAll($select, array($this, 'push'));
+	}
 }

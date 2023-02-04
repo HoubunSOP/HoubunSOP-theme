@@ -259,6 +259,113 @@ body {
     transform: scale(0.8);
   }
 }
+/***********************
+ * Essential Structure *
+ ***********************/
+.flexsearch--wrapper {
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  overflow: hidden;
+  background: transparent;
+  margin: 0;
+  position: static;
+}
+
+.flexsearch--form {
+  overflow: hidden;
+  position: relative;
+}
+
+.flexsearch--input-wrapper {
+  padding: 0 66px 0 0;
+  /* Right padding for submit button width */
+  overflow: hidden;
+}
+
+.flexsearch--input {
+  width: 100%;
+}
+
+/***********************
+ * Configurable Styles *
+ ***********************/
+
+.flexsearch--input {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 0 46px 0 10px;
+  height: 30px;
+  border-color: #888;
+  border-radius: 35px;
+  /* (height/2) + border-width */
+  border-style: solid;
+  border-width: 3px;
+  color: #333;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 15px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.flexsearch--submit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  border: none;
+  margin-top: -10px;
+  /* margin-top + border-width */
+  margin-right: 5px;
+  /* border-width */
+  background: transparent;
+  color: #888;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 20px;
+  line-height: 60px;
+}
+
+.flexsearch--input:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.flexsearch--input:focus.flexsearch--submit {
+  color: #333;
+}
+
+.flexsearch--submit:hover {
+  color: #333;
+  cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+input:-moz-placeholder {
+  color: #888;
+}
+@media screen and (max-width: 767px){
+#Navigation ul.showMenu .flexsearch {
+    height: 80px;
+    opacity: 1;
+    visibility: visible;
+}
+#Navigation .flexsearch {
+    height: 80px;
+    float: left;
+    padding: 0px 40px;
+    opacity: 0;
+    visibility: hidden;
+    margin-left: 0;
+    transition: all 0.3s 0.1s;
+}
+}
 </style>
 <header id="Navigation">
   <nav>
@@ -285,7 +392,18 @@ body {
           <div class="bar"></div>
         </div>
       </div>
+      
       <ul>
+<div class="flexsearch">
+		<div class="flexsearch--wrapper">
+			<form class="flexsearch--form" method="post" action="<?php $this->options->siteUrl(); ?>" role="search">
+				<div class="flexsearch--input-wrapper">
+					<input  type="text" id="s" name="s"  class="flexsearch--input" type="search" placeholder="<?php _e('输入关键字搜索'); ?>">
+				</div>
+				<input class="flexsearch--submit" type="submit" value="&#10140;"/>
+			</form>
+		</div>
+</div>
         <li><a href="<?php $this->options->siteUrl(); ?>">首页</a></li>
         <?php 
           \Widget\Contents\Page\Rows::alloc()->to($pages);

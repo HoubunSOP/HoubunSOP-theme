@@ -1,11 +1,50 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+<style>
+  .widget>.list--withIcon{
+    height:500px;
+    overflow-y:scroll;
+  }
+    .list-item img {
+      height: 100px;
+    width: 100px;
+    border-radius: 12px !important;
+    border: none !important;
+  }
+
+  .list-item a {
+    font-size: 1.2em !important;
+    font-weight: 700;
+  }
+</style>
 <div class="col-mb-12 col-offset-1 col-3 kit-hidden-tb" id="secondary" role="complementary">
+<?php BilibiliEcho_Plugin::renderDynamics() ?>
   <?php if (!empty($this->options->sidebarBlock) && in_array('ShowRecentPosts', $this->options->sidebarBlock)): ?>
   <section class="widget">
     <h3 class="widget-title"><?php _e('最新文章'); ?></h3>
     <ul class="widget-list">
-      <?php \Widget\Contents\Post\Recent::alloc()
-                    ->parse('<li><a href="{permalink}">{title}</a></li>'); ?>
+      <?php \Widget\Contents\Post\Recent::alloc()->to($contents);
+      $num = 0;
+      while ($contents->next()):
+        if($contents->fields->IsManga != 1 && $num <3):
+          $num++;
+      ?>
+      <li><a href="<?php $contents->permalink() ?>"><?php $contents->title() ?></a></li>
+      <?php endif;endwhile;?>
+    </ul>
+  </section>
+  <?php endif; ?>
+  <?php if (!empty($this->options->sidebarBlock) && in_array('ShowRecentMangas', $this->options->sidebarBlock)): ?>
+  <section class="widget">
+    <h3 class="widget-title"><?php _e('最新漫画'); ?></h3>
+    <ul class="widget-list">
+      <?php \Widget\Contents\Post\Recent::alloc()->to($contents);
+      $num = 0;
+      while ($contents->next()):
+        if($contents->fields->IsManga == 1 && $num <3):
+          $num++;
+      ?>
+      <li><a href="<?php $contents->permalink() ?>"><?php $contents->title() ?></a></li>
+      <?php endif;endwhile;?>
     </ul>
   </section>
   <?php endif; ?>
