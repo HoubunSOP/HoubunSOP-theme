@@ -72,10 +72,8 @@
   endif;
     ?>
   <style>
-<<<<<<< HEAD
   <?php if($this->options->enterCur): ?>
-=======
->>>>>>> 8effb1e2daaa9d3b74c23a871e0ae81b61f8a655
+
     *{
       
       cursor: url(<?php $this->options->themeUrl('assets/cursors/default.cur'); ?>), auto;
@@ -87,7 +85,6 @@
     input{
       cursor: url(<?php $this->options->themeUrl('assets/cursors/text.cur'); ?>), text;
     }
-<<<<<<< HEAD
       /* 修改选择时的颜色 */
   ::selection {
     cursor: url(<?php $this->options->themeUrl('assets/cursors/text.cur'); ?>), text;
@@ -101,8 +98,6 @@
     cursor: url(<?php $this->options->themeUrl('assets/cursors/text.cur'); ?>), text;
   }
     <?php endif;?>
-=======
->>>>>>> 8effb1e2daaa9d3b74c23a871e0ae81b61f8a655
   body {
     background: url(<?php $this->options->backgroundUrl() ?>);
     background-size: 100% 100%;

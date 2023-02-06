@@ -74,7 +74,7 @@ $this->need('components/index/link.php');
 }
 
 #npcatch-top .title {
-  width: calc(100% - 30%);
+  /* width: calc(100% - 30%);*/
   float: left;
   height: 10px;
   padding: 0px 10px;

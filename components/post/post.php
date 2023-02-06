@@ -16,10 +16,7 @@
     <?php $this->content(); ?>
   </div>
   <p itemprop="keywords" class="tags"><?php $this->tags(' ', true, '<a>暂无标签</a>'); ?></p>
-<<<<<<< HEAD
-=======
   <?php $this->tags(); ?>
->>>>>>> 8effb1e2daaa9d3b74c23a871e0ae81b61f8a655
 </article>
 <style>
   .post{

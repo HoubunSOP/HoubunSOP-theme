@@ -118,7 +118,7 @@ body {
 }
 
 #Navigation li {
-  margin-left: 20px;
+  /*margin-left: 20px;*/
   transition: all 0.3s;
 }
 
