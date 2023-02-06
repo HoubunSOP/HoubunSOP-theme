@@ -226,7 +226,7 @@ body {
   }
 
   #Navigation ul.showMenu {
-    height: 250px;
+    height: 90vh;
     background-color: #314997b3;
     backdrop-filter: saturate(120%) blur(20px);
     transition: 0.3s ease all;
