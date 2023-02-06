@@ -14,6 +14,9 @@
         ], '', ' - '); ?><?php $this->options->title(); ?></title>
 
   <!-- 使用url函数转换相关路径 -->
+  <?php if($this->options->icoUrl): ?>
+  <link rel="icon" href="<?php $this->options->icoUrl() ?>">
+  <?php endif;?>
   <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/normalize.css'); ?>">
   <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/grid.css'); ?>">
   <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/style.css'); ?>">
@@ -69,8 +72,33 @@
   endif;
     ?>
   <style>
+  <?php if($this->options->enterCur): ?>
+    *{
+      
+      cursor: url(<?php $this->options->themeUrl('assets/cursors/default.cur'); ?>), auto;
+      
+    }
+    a{
+      cursor: url(<?php $this->options->themeUrl('assets/cursors/pointer.cur'); ?>), pointer;
+    }
+    input{
+      cursor: url(<?php $this->options->themeUrl('assets/cursors/text.cur'); ?>), text;
+    }
+      /* 修改选择时的颜色 */
+  ::selection {
+    cursor: url(<?php $this->options->themeUrl('assets/cursors/text.cur'); ?>), text;
+  }
+
+  ::-moz-selection {
+    cursor: url(<?php $this->options->themeUrl('assets/cursors/text.cur'); ?>), text;
+  }
+
+  ::-webkit-selection {
+    cursor: url(<?php $this->options->themeUrl('assets/cursors/text.cur'); ?>), text;
+  }
+    <?php endif;?>
   body {
-    background: url(https://s2.loli.net/2023/01/27/SU9M1XWPgdycYAF.jpg);
+    background: url(<?php $this->options->backgroundUrl() ?>);
     background-size: 100% 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -204,13 +232,13 @@
   </style>
   <div id="body">
     <div class="move_star01 img_100">
-      <img src="http://koiastv.com/images/tmp/star.png" width="133" height="133" alt="">
+      <img src="<?php $this->options->themeUrl('assets/img/star.png'); ?>" width="133" height="133" alt="">
     </div>
     <div class="move_star02 img_100">
-      <img src="http://koiastv.com/images/tmp/star.png" width="133" height="133" alt="">
+      <img src="<?php $this->options->themeUrl('assets/img/star.png'); ?>" width="133" height="133" alt="">
     </div>
     <div class="move_star03 img_100 style_mobile">
-      <img src="http://koiastv.com/images/tmp/star.png" width="133" height="133" alt="">
+      <img src="<?php $this->options->themeUrl('assets/img/star.png'); ?>" width="133" height="133" alt="">
     </div>
     <div class="container drop-shadow">
       <div class="row">

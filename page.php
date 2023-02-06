@@ -50,7 +50,7 @@
   margin-left: 20px;
 }
 
-.gallery>img {
+.post-content .gallery>img {
   margin: 10px 0 20px 0;
 }
 

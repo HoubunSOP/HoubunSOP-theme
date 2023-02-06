@@ -1,51 +1,40 @@
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <h1 class="post-title" itemprop="name headline">
-    <a itemprop="url" href="<?php $this->permalink() ?>"><?php $this->title() ?></a>
-  </h1>
-  <ul class="post-meta">
-    <li itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <?php _e('作者: '); ?><a itemprop="name" href="<?php $this->author->permalink(); ?>"
-        rel="author"><?php $this->author(); ?></a>
-    </li>
-    <li><?php _e('时间: '); ?>
-      <time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time>
-    </li>
-    <li class="catList"><?php $this->category(' ', true, '<a>暂无分类</a>'); ?></li>
-  </ul>
-  <div class="post-content" itemprop="articleBody">
-    <?php $this->content(); ?>
-  </div>
-  <p itemprop="keywords" class="tags"><?php $this->tags(' ', true, '<a>暂无标签</a>'); ?></p>
-</article>
-<style>
-  .post{
-    border-bottom: none;
-  }
- .post .tags{
-    margin-top: 1.5em;
-    padding: 0;
-    color: #999;
-    font-size: 0.92857em;
-  }
-  .post .tags>a {
-  color: #ffffff;
-  padding: 2px 20px;
-  background: var(--md-sys-color-secondary-light);
-  float: left;
-  font-weight: bold;
-  margin: 6px;
-  border-radius: 4px;
-  font-size: 14px;
-}
-.catList>a {
-  color: #ffffff;
-  padding: 2px 20px;
-  background: var(--md-ref-palette-secondary10);
-  font-weight: bold;
-  border-radius: 4px;
-  font-size: 14px;
-}
+<?php 
+/**
+ * 文章分类
+ *
+ * @package custom
+ */
+if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+<?php $this->need('header.php'); ?>
 
+<div class="col-mb-12 col-8" id="main" role="main">
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <h1 class="post-title" itemprop="name headline">
+      <a itemprop="url" href="<?php $this->permalink() ?>"><?php $this->title() ?></a>
+    </h1>
+    <div class="post-content cat-content" itemprop="articleBody">
+    <ul>
+    <?php $this->widget('Widget_Metas_Category_List')->to($category);
+    while ($category->next()):
+     ?>
+     <?php if ($category->levels === 0): ?>
+    <h3><a href="<?php $category->permalink(); ?>"><?php $category->name(); ?></a></h3>
+    <?php elseif ($category->levels === 1): ?>
+      <h5><a href="<?php $category->permalink(); ?>"><?php $category->name(); ?></a></h5>
+    <?php else:?>
+     <li><a href="<?php $category->permalink(); ?>"><?php $category->name(); ?></a></li>
+     <?php endif;endwhile;?>
+     </ul>
+    </div>
+  </article>
+</div><!-- end #main-->
+<style>
+.cat-content li{
+  margin-left: 30px;
+}
+.cat-content ul{
+  margin-left: 0px !important;
+}
 .post-content {
   color: #24292e;
   line-height: 2em;
@@ -59,14 +48,8 @@
   line-height: 1.4;
 }
 
-.entry-content h1,
-.entry-content h2,
-.entry-content h3,
-.entry-content h4,
-.entry-content h5 {
-  color: #004483;
-  font-weight: 700;
-  margin-top: 25px;
+.post-title {
+  font-size: 200%;
 }
 
 .post-content h1,
@@ -78,8 +61,11 @@
   line-height: 1.4;
   font-weight: 700;
   margin: 30px 0 10px 0;
+  color: #004483;
 }
-
+.post-content h5 a{
+  border-bottom: rgba(45, 67, 144, 0.2) 2px dotted !important;
+}
 .post-content p {
   margin: 10px 0;
 }
@@ -90,14 +76,6 @@
 
 .gallery>img {
   margin: 10px 0 20px 0;
-  transition: 0.3s ease all;
-  border-radius: 10px;
-}
-
-.gallery>img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 30px -5px #3752abb3;
-  cursor: pointer;
 }
 
 .post-content a:not(.gallery) {
@@ -187,3 +165,5 @@ h5 {
   padding: 10px 15px;
 }
 </style>
+<?php $this->need('sidebar.php'); ?>
+<?php $this->need('footer.php'); ?>

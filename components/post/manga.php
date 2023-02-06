@@ -117,6 +117,16 @@
   border-radius: 4px;
   font-size: 14px;
 }
+.catList>a {
+  color: #ffffff;
+  padding: 2px 20px;
+  background: var(--md-ref-palette-secondary10);
+  float: left;
+  font-weight: bold;
+  margin: 6px;
+  border-radius: 4px;
+  font-size: 14px;
+}
 
 .relatedLink {
   margin: 0 10px;
@@ -144,13 +154,13 @@ switch ($this->fields->Magazine)
     $Magazine .= "Kirara";
     break;
   case "2":
-    $Magazine .= "KR MAX";
+    $Magazine .= "Kirara MAX";
     break;
   case "3":
-    $Magazine .= "KR Carat";
+    $Magazine .= "Kirara Carat";
     break;
   case "4":
-    $Magazine .= "KR Forward";
+    $Magazine .= "Kirara Forward";
     break;
   case "5":
     $Magazine = "Comic Fuz";
@@ -175,11 +185,14 @@ switch ($this->fields->Magazine)
       <br>
       <span class="MangaAuthor">
         <span class="MangaAuthorName">
-          Quro
+          <?php if($this->fields->author == null){ echo "暂无情报"; }else{ $this->fields->author(); } ?>
         </span>
       </span>
     </div>
     <div class="syoseki-page2">
+    <div class="catList">
+        <?php $this->category(' ', true, "<a>暂无分类</a>"); ?>
+      </div>
       <div class="tagList">
         <?php $this->tags(' ', true, "<a>暂无标签</a>"); ?>
       </div>
@@ -321,13 +334,13 @@ switch ($this->fields->Magazine)
   margin-left: 20px;
 }
 
-.gallery>img {
+.post-content .gallery>img {
   margin: 10px 0 20px 0;
   transition: 0.3s ease all;
   border-radius: 10px;
 }
 
-.gallery>img:hover {
+.post-content .gallery>img:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 30px -5px #3752abb3;
   cursor: pointer;

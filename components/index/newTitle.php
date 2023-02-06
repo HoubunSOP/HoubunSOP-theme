@@ -37,21 +37,17 @@ h3.new-top {
 </h3>
 <div style="padding-bottom: 10px">
   <div class="tagList">
-    <p>
-      <a href="http://yurinavi.com/category/alllist/yuricomic/">
-      </a>
-    </p>
-    <a href="http://yurinavi.com/category/alllist/yuricomic/">
+    <?php if(1 != 1):
+    $this->widget('Widget_Metas_Category_List')->to($category);
+    while ($category->next()):
+    ?>
+    <a href="<?php $category->permalink(); ?>">
       <div class="tag">
         <span style="color: var(--md-sys-color-on-secondary-light)">
-          <center>Tag</center>
+          <center><?php $category->name(); ?></center>
         </span>
       </div>
     </a>
-    <p>
-      <a href="http://yurinavi.com/category/alllist/yuricomic/">
-      </a>
-      <a href="http://yurinavi.com/tag/yurihime/"> </a>
-    </p>
+    <?php endwhile;endif;?>
   </div>
 </div>
