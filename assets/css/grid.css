@@ -242,7 +242,11 @@
     width: 16.66667%; }
 
   .col-3 {
+<<<<<<< HEAD
     width: 26.9%; }
+=======
+    width: 29%; }
+>>>>>>> 8effb1e2daaa9d3b74c23a871e0ae81b61f8a655
 
   .col-4 {
     width: 33.33333%; }
