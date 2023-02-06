@@ -34,6 +34,9 @@
         default:
           $titleLogo = "https://houbunsha.co.jp/img/mv_img/label_4.gif";
       }
+      $bookDate = strtotime("+1 months",strtotime($recent->fields->UpDate));
+      $nowDate = strtotime(date('Y-m-d'));
+      if($bookDate >= $nowDate):
     ?>
     <div class="swiper-slide">
       <div class="SwiperCard">
@@ -60,7 +63,7 @@
         </div>
       </div>
     </div>
-    <?php endif;endwhile; endif; ?>
+    <?php endif;endif;endwhile; endif; ?>
   </div>
   <br>
   <div class="swiper-scrollbar"></div>
