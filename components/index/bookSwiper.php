@@ -25,6 +25,15 @@
     if($recent->have()):
     while($recent->next()):
     if($recent->fields->IsManga == 1):
+      $titleLogo = "";
+      switch ($recent->fields->Magazine)
+      {
+        case "4":
+          $titleLogo = "https://houbunsha.co.jp/img/data_krforward_icon.gif";
+          break;
+        default:
+          $titleLogo = "https://houbunsha.co.jp/img/mv_img/label_4.gif";
+      }
     ?>
     <div class="swiper-slide">
       <div class="SwiperCard">
@@ -41,7 +50,7 @@
           <a href="<?php $recent->permalink();?>">
             <img data-src="<?php if($recent->fields->thumbnail == null){ echo "https://houbunsha.co.jp/img/mv_img/con_item_nPrn_2.png"; }else{ $recent->fields->thumbnail(); } ?>" alt="" width="1055" height="1500"
               class="alignnone size-full wp-image-60148 swiper-lazy">
-            <img data-src="https://houbunsha.co.jp/img/mv_img/label_4.gif" class="swiper-lazy">
+            <img data-src="<?php echo $titleLogo; ?>" class="swiper-lazy">
           </a>
           <p>
           </p>
