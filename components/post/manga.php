@@ -205,6 +205,10 @@ switch ($this->fields->Magazine)
       </h3>
       <p style="line-height: 1.5em;">
         <span style="font-size: 1em;">
+          <?php if($this->fields->oName):?>
+          原名:<?php $this->fields->oName();?>
+          <br>
+          <?php endif; ?>
           发售日:<?php $this->fields->UpDate();?>
           <br>
           出版社:芳文社

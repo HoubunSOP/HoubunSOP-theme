@@ -4,7 +4,7 @@
  * Version: 1.2.8
  * Update: 2013.11.25
  */
-.container, .row > [class*="col-"] {
+ .container, .row > [class*="col-"] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
@@ -242,11 +242,7 @@
     width: 16.66667%; }
 
   .col-3 {
-<<<<<<< HEAD
     width: 26.9%; }
-=======
-    width: 29%; }
->>>>>>> 8effb1e2daaa9d3b74c23a871e0ae81b61f8a655
 
   .col-4 {
     width: 33.33333%; }

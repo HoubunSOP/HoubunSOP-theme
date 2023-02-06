@@ -88,6 +88,9 @@ function themeFields($layout)
   $author = new Typecho_Widget_Helper_Form_Element_Text('author', NULL, NULL, _t('作者名称'), _t('漫画作者名字'));
   $layout->addItem($author);
 
+  $oName = new Typecho_Widget_Helper_Form_Element_Text('oName', NULL, NULL, _t('作品原名'), _t('漫画原名'));
+  $layout->addItem($oName);
+
   $Magazine= new Typecho_Widget_Helper_Form_Element_Radio('Magazine',array('1' => _t('Kirara'),'2' => _t('MAX'),'3' => _t('Carat'),'4' => _t('Forward'),'5' => _t('Comic Fuz')),null,_t('漫画登刊'),_t("漫画在哪个杂志中连载，不填写为其他"));
   $layout->addItem($Magazine);
   //漫画相关链接
