@@ -177,6 +177,7 @@ label {
         <textarea id="comment" class="textarea form-control OwO-textarea" name="text" rows="5"
           placeholder="说点什么吧……"><?php $this->remember('text'); ?></textarea>
       </p>
+      <?php GrCv3Protect_Plugin::OutputCode(); ?>
       <p>
         <button type="submit" class="submit"><?php _e('提交评论'); ?></button>
       </p>

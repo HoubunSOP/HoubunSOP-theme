@@ -16,7 +16,6 @@
     <?php $this->content(); ?>
   </div>
   <p itemprop="keywords" class="tags"><?php $this->tags(' ', true, '<a>暂无标签</a>'); ?></p>
-  <?php $this->tags(); ?>
 </article>
 <style>
   .post{
