@@ -22,7 +22,10 @@
   <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/style.css'); ?>">
   <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/color/theme.css'); ?>">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/6.2.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/misans@3.1.1/lib/misans-400-regular.min.css">
+
   <script src="https://cdn.bootcss.com/jquery/3.5.1/jquery.min.js"></script>
+  <script src="//instant.page/5.1.1" type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
 
   <!-- 通过自有函数输出HTML头部信息 -->
   <?php $this->header(); ?>
