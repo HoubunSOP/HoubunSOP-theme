@@ -15,6 +15,13 @@
   overflow: hidden;
 }
 
+@media (max-width: 1400px){
+    .entry-content {
+    display: grid;
+    justify-content: center;
+}
+
+}
 .syoseki-page1 {
   float: left;
   display: block;
@@ -180,7 +187,7 @@ switch ($this->fields->Magazine)
   <div id="entry-content" class="entry-content clearfix">
     <div class="syoseki-page1">
       <img
-        src="<?php if($this->fields->thumbnail == null){ echo "https://houbunsha.co.jp/img/mv_img/con_item_nPrn_2.png"; }else{ $this->fields->thumbnail(); } ?>"
+        src="<?php if($this->fields->thumbnail == null){ echo "https://www.fwgxt.top/usr/uploads/2023/02/2796890463.png"; }else{ $this->fields->thumbnail(); } ?>"
         alt="" width="250" height="994" class="alignnone size-large">
       <br>
       <span class="MangaAuthor">

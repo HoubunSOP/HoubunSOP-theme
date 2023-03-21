@@ -1,4 +1,8 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+<?php 
+if (!defined('__TYPECHO_ROOT_DIR__')) exit; 
+
+$cssVersion = "1.1";
+?>
 <!DOCTYPE HTML>
 <html>
 
@@ -17,13 +21,13 @@
   <?php if($this->options->icoUrl): ?>
   <link rel="icon" href="<?php $this->options->icoUrl() ?>">
   <?php endif;?>
-  <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/normalize.css'); ?>">
-  <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/grid.css'); ?>">
-  <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/style.css'); ?>">
-  <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/color/theme.css'); ?>">
+  <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/normalize.css'); ?>?v=<?php echo $cssVersion;?>">
+  <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/grid.css'); ?>?v=<?php echo $cssVersion;?>">
+  <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/style.css'); ?>?v=<?php echo $cssVersion;?>">
+  <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/color/theme.css'); ?>?v=<?php echo $cssVersion;?>">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/6.2.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/misans@3.1.1/lib/misans-400-regular.min.css">
-
+  <script src="//cdn.jsdelivr.net/npm/spacingjs" defer></script>
   <script src="https://cdn.bootcss.com/jquery/3.5.1/jquery.min.js"></script>
   <script src="//instant.page/5.1.1" type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
 
@@ -75,6 +79,26 @@
   endif;
     ?>
   <style>
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+     background: rgba(0,0,0,.1); border-radius: 10px; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+      background: #3E72B6;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+ background: #D7E9F8
+}
   <?php if($this->options->enterCur): ?>
 
     *{

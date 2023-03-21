@@ -26,7 +26,7 @@ body {
   background-color: #3752abb3;
   backdrop-filter: saturate(120%) blur(20px);
   transition: 0.3s ease all;
-  border-radius: 24px;
+  border-radius: 0px 0px 24px 24px;
 }
 
 /*** Navigation Styles ***/

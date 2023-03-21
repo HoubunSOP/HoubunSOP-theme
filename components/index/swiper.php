@@ -5,7 +5,7 @@
   $this->widget('Widget_Post_GetCid@GetCid', 'GetCid='.$swiperCid)->to($post);while($post->next()): ?>
     <div class="swiper-slide">
       <a href="<?php $post->permalink();?>" target="_self" >
-        <img src="<?php if($post->fields->thumbnail == null){ echo "https://houbunsha.co.jp/img/mv_img/con_item_nPrn_2.png"; }else{ $post->fields->thumbnail(); } ?>" height="210"
+        <img src="<?php if($post->fields->thumbnail == null){ echo "https://www.fwgxt.top/usr/uploads/2023/02/2796890463.png"; }else{ $post->fields->thumbnail(); } ?>" height="210"
           width="420" alt="" class="slider-1767 slide-77396" draggable="false">
       </a>
       <div class="caption-wrap">

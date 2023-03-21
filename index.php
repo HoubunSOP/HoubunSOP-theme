@@ -82,6 +82,8 @@ $this->need('components/index/link.php');
   font-weight: 700;
   color: #333333;
   line-height: 25px;
+  margin-top: 5%;
+  margin-left: 15px;
 }
 
 #npcatch-top .title a {

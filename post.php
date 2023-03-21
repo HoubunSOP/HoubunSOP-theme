@@ -1,5 +1,13 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
+<style>
+    .x-btn{
+        border-bottom: none !important;
+    }
+    .x-btn:after{
+        content: ''!important;
+    }
+</style>
 <div class="col-mb-12 col-8" id="main" role="main">
   <?php 
 if($this->fields->IsManga == 1){

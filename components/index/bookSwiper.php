@@ -51,7 +51,7 @@
         </div>
         <div>
           <a href="<?php $recent->permalink();?>">
-            <img data-src="<?php if($recent->fields->thumbnail == null){ echo "https://houbunsha.co.jp/img/mv_img/con_item_nPrn_2.png"; }else{ $recent->fields->thumbnail(); } ?>" alt="" width="1055" height="1500"
+            <img data-src="<?php if($recent->fields->thumbnail == null){ echo "https://www.fwgxt.top/usr/uploads/2023/02/2796890463.png"; }else{ $recent->fields->thumbnail(); } ?>" alt="" width="1055" height="1500"
               class="alignnone size-full wp-image-60148 swiper-lazy">
             <img data-src="<?php echo $titleLogo; ?>" class="swiper-lazy">
           </a>
