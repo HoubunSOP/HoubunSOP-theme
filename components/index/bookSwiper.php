@@ -62,6 +62,7 @@
           </div>
         </div>
       </div>
+      <div class="swiper-lazy-preloader"></div>
     </div>
     <?php endif;endif;endwhile; endif; ?>
   </div>
